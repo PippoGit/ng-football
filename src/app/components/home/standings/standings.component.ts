@@ -24,7 +24,7 @@ export class StandingsComponent implements OnInit {
     const commonStyle = 'px-3 py-3';
     return [
       {
-        style: `${commonStyle} text-right`,
+        style: `${commonStyle} text-right pl-1`,
         title: '',
       },
       {
@@ -56,7 +56,7 @@ export class StandingsComponent implements OnInit {
         title: 'GD',
       },
       {
-        style: `${commonStyle} text-right`,
+        style: `${commonStyle} text-right pr-4`,
         title: 'Pts',
       },
     ];
