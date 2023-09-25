@@ -6,15 +6,15 @@
   </thead>
   <tbody>
     <tr class="px-3" *ngFor="let standing of data">
-      <td class="px-3 py-3 whitespace-nowrap">{{ standing.rank }}</td>
-      <td class="px-3 py-3 whitespace-nowrap text-center"><img [src]="standing.team.logo" width="25" /></td>
-      <td class="px-3 py-3 whitespace-nowrap">{{ standing.team.name }}</td>
-      <td class="px-3 py-3 whitespace-nowrap">{{ standing.all.played }}</td>
-      <td class="px-3 py-3 whitespace-nowrap">{{ standing.all.win }}</td>
-      <td class="px-3 py-3 whitespace-nowrap">{{ standing.all.lose }}</td>
-      <td class="px-3 py-3 whitespace-nowrap">{{ standing.all.draw }}</td>
-      <td class="px-3 py-3 whitespace-nowrap">{{ standing.goalsDiff }}</td>
-      <td class="px-3 py-3 whitespace-nowrap">{{ standing.points }}</td>
+      <td class="{{ headers[0].style }}">{{ standing.rank }}</td>
+      <td class="{{ headers[1].style }}"><img [src]="standing.team.logo" width="25" /></td>
+      <td class="{{ headers[2].style }}"><a [routerLink]="['/team', standing.team.id]">{{ standing.team.name }}</a></td>
+      <td class="{{ headers[3].style }}">{{ standing.all.played }}</td>
+      <td class="{{ headers[4].style }}">{{ standing.all.win }}</td>
+      <td class="{{ headers[5].style }}">{{ standing.all.lose }}</td>
+      <td class="{{ headers[6].style }}">{{ standing.all.draw }}</td>
+      <td class="{{ headers[7].style }}">{{ standing.goalsDiff }}</td>
+      <td class="{{ headers[8].style }}">{{ standing.points }}</td>
     </tr>
   </tbody>
 </table>

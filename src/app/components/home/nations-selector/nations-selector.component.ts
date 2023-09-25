@@ -7,6 +7,4 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class NationsSelectorComponent {
   @Input() countries: SupportedCountry[] = [];
-  @Input() currentCountry?: SupportedCountry;
-  @Output() change = new EventEmitter<SupportedCountry>();
 }

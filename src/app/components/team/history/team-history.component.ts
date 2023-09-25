@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ngf-team-history',
   templateUrl: './team-history.component.html',
   styleUrls: [],
 })
-export class TeamHistoryComponent {}
+export class TeamHistoryComponent {
+  @Input() team!: string;
+}

@@ -3,7 +3,9 @@
     <button id="{{country}}Select"
     class="button hover:bg-sky-800 active:bg-sky-700 px-2 py-1 rounded-lg font-semibold aria-selected:bg-sky-800" 
     *ngFor="let country of countries" 
-    [attr.aria-selected]="country === currentCountry" 
-    (click)="change.emit(country)">{{country}}</button>
+    
+    [routerLink]="[country]"
+    routerLinkActive="bg-sky-800"
+    >{{country}}</button>
   </div>
 </div>
