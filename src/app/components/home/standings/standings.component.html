@@ -1,0 +1,20 @@
+<table class="min-w-full rounded-lg bg-sky-900" *ngIf="this.apiData$ | async as data">
+  <thead>
+    <tr class="px-3">
+      <th *ngFor="let header of headers" class="{{header.style}}">{{header.title}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="px-3" *ngFor="let standing of data">
+      <td class="px-3 py-3 whitespace-nowrap">{{ standing.rank }}</td>
+      <td class="px-3 py-3 whitespace-nowrap text-center"><img [src]="standing.team.logo" width="25" /></td>
+      <td class="px-3 py-3 whitespace-nowrap">{{ standing.team.name }}</td>
+      <td class="px-3 py-3 whitespace-nowrap">{{ standing.all.played }}</td>
+      <td class="px-3 py-3 whitespace-nowrap">{{ standing.all.win }}</td>
+      <td class="px-3 py-3 whitespace-nowrap">{{ standing.all.lose }}</td>
+      <td class="px-3 py-3 whitespace-nowrap">{{ standing.all.draw }}</td>
+      <td class="px-3 py-3 whitespace-nowrap">{{ standing.goalsDiff }}</td>
+      <td class="px-3 py-3 whitespace-nowrap">{{ standing.points }}</td>
+    </tr>
+  </tbody>
+</table>

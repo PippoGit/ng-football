@@ -1,0 +1,9 @@
+<div class="mx-auto container-sm">
+  <div class="flex gap-1 rounded-lg  px-4 py-2 bg-sky-900">
+    <button id="{{country}}Select"
+    class="button hover:bg-sky-800 active:bg-sky-700 px-2 py-1 rounded-lg font-semibold aria-selected:bg-sky-800" 
+    *ngFor="let country of countries" 
+    [attr.aria-selected]="country === currentCountry" 
+    (click)="change.emit(country)">{{country}}</button>
+  </div>
+</div>

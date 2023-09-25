@@ -1,0 +1,4 @@
+<div class="flex flex-col gap-4 container">
+  <ngf-nations-selector [countries]="countries" [currentCountry]="currentCountry" (change)="onCountryChange($event)" />
+  <ngf-standings *ngIf="currentCountry" [country]="currentCountry" />
+</div>
