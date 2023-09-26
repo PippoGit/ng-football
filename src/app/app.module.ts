@@ -12,6 +12,7 @@ import { NationsSelectorComponent } from './components/home/nations-selector/nat
 import { StandingsComponent } from './components/home/standings/standings.component';
 import { TeamHistoryComponent } from './components/team/history/team-history.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgfLogoDirective } from './directives/ngf-logo.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     TeamHistoryComponent,
     HomeComponent,
     TeamComponent,
+    NgfLogoDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [ConfigService],

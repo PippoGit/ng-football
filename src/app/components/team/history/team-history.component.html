@@ -1,2 +1,17 @@
-<p>team-history works!</p>
-<h1>{{ team }}</h1>
+<div class="rounded-lg bg-sky-900 grid grid-cols-5 gap-3 p-4 justify-items-center"
+  *ngIf="this.apiData$ | async as data; else loading">
+  <ng-container *ngFor="let match of data">
+    <img ngfLogo [team]="match.home" />
+    <span>{{match.home.name}}</span>
+    <div>
+      <span>{{ match.score.home }} </span>
+      <span>-</span>
+      <span>{{match.score.away}}</span>
+    </div>
+    <span>{{match.away.name}}</span>
+    <img ngfLogo [team]="match.away" />
+  </ng-container>
+</div>
+<ng-template #loading>
+  <p class="animate-pulse text-center">Loading...</p>
+</ng-template>

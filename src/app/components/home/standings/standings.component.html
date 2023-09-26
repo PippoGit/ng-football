@@ -1,4 +1,4 @@
-<table class="min-w-full rounded-lg bg-sky-900 py-4" *ngIf="this.apiData$ | async as data">
+<table class="min-w-full rounded-lg bg-sky-900 py-4" *ngIf="this.apiData$ | async as data; else loading">
   <thead>
     <tr class="px-3">
       <th *ngFor="let header of headers" class="{{header.style}}">{{header.title}}</th>
@@ -7,7 +7,7 @@
   <tbody>
     <tr class="px-3" *ngFor="let standing of data">
       <td class="{{ headers[0].style }}">{{ standing.rank }}</td>
-      <td class="{{ headers[1].style }}"><img [src]="standing.team.logo" width="25" /></td>
+      <td class="{{ headers[1].style }}"><img ngfLogo [team]="standing.team" /></td>
       <td class="{{ headers[2].style }}"><a [routerLink]="['/team', standing.team.id]" class="hover:text-sky-400">{{
           standing.team.name }}</a></td>
       <td class="{{ headers[3].style }}">{{ standing.all.played }}</td>
@@ -19,3 +19,6 @@
     </tr>
   </tbody>
 </table>
+<ng-template #loading>
+  <p class="animate-pulse text-center">Loading...</p>
+</ng-template>

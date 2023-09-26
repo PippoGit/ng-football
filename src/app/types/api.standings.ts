@@ -1,4 +1,4 @@
-export interface StandingsRequest {
+export interface StandingsResponse {
   get: string;
   parameters: Parameters;
   errors: any[];
