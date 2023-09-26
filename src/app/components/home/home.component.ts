@@ -7,13 +7,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
   styleUrls: [],
 })
 export class HomeComponent {
-  currentCountry?: SupportedCountry;
-
   constructor(private config: ConfigService) {}
-
-  onCountryChange(country: SupportedCountry) {
-    this.currentCountry = country;
-  }
 
   get countries() {
     return this.config.SUPPORTED_COUNTRIES;
